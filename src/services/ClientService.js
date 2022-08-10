@@ -1,7 +1,7 @@
 import { Api } from './Api';
 
 const  ENPOINTS = {
-    Client: 'clients',
+    Client: 'client',
 };
 
 const getAll = signal => {
@@ -13,7 +13,7 @@ const getById = (id, signal) => {
 }
 
 const create = (payload, signal) => {
-    return Api.post(ENPOINTS.Client, payload, signal)
+    return Api.post(`${ENPOINTS.Client}/register`, payload, signal)
 }
 
 const update = (id, payload, signal) => {

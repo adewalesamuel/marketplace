@@ -1,11 +1,15 @@
 import { Api } from './Api';
 
 const  ENPOINTS = {
-    Category: 'categorys',
+    Category: 'categories',
 };
 
 const getAll = signal => {
     return Api.get(ENPOINTS.Category, signal)
+}
+
+const getArticles = (signal, slug) => {
+    return Api.get(`${ENPOINTS.Category}/${slug}/articles`, signal);
 }
 
 const getById = (id, signal) => {
@@ -28,5 +32,6 @@ export const CategoryService = {
     getById,
     create,
     update,
-    destroy
+    destroy,
+    getArticles
 }

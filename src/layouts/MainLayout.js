@@ -15,7 +15,7 @@ export function MainLayout(props) {
     return (
         <>
         <div className="page-wrapper">
-            <Components.Header />
+            <Components.Header categories={props.categories}/>
             <main className="main">
                 <div className="mb-lg-2"></div>
                 <div className="container-fluid">
@@ -23,6 +23,7 @@ export function MainLayout(props) {
                 </div>
             </main>
             <Components.Footer />
+            <Components.AuthModal />
         </div>
         </>
     )

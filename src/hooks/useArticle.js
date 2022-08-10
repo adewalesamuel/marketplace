@@ -13,14 +13,17 @@ export const useArticle = () => {
 	const [attributes, setAttributes] = useState('');
 	const [period, setPeriod] = useState('');
 	const [address, setAddress] = useState('');
-	const [img_url, setImg_url] = useState('');
+	const [img_urls, setImg_urls] = useState('');
+
+	const [artisan, setArtisan] = useState('');
+	const [category, setCategory] = useState('');
 	
 
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
 
-    const getArticle = (articleId, signal) => {        
-        return Services.ArticleService.getById(articleId, signal)
+    const getArticle = (articleSlug, signal) => {        
+        return Services.ArticleService.getBySlug(articleSlug, signal)
         .then(response => {
             fillArticle(response.article);
             setIsDisabled(false);
@@ -39,7 +42,7 @@ export const useArticle = () => {
 		attributes,
 		period,
 		address,
-		img_url,
+		img_urls,
 		
         };
 
@@ -57,7 +60,7 @@ export const useArticle = () => {
 		attributes,
 		period,
 		address,
-		img_url,
+		img_urls,
 		
         };
 
@@ -78,7 +81,9 @@ export const useArticle = () => {
 		setAttributes(article.attributes ?? '');
 		setPeriod(article.period ?? '');
 		setAddress(article.address ?? '');
-		setImg_url(article.img_url ?? '');
+		setImg_urls(article.img_urls ?? '');
+		setArtisan(article.artisan ?? null);
+		setCategory(article.category ?? null);
 		
     }
     const emptyArticle = () => {
@@ -93,7 +98,9 @@ export const useArticle = () => {
 		setAttributes('');
 		setPeriod('');
 		setAddress('');
-		setImg_url('');
+		setImg_urls('');
+		setCategory('');
+		setArtisan('');
 		
     }
 
@@ -109,7 +116,9 @@ export const useArticle = () => {
 		attributes,
 		period,
 		address,
-		img_url,
+		img_urls,
+		artisan,
+		category,
 		
         errors,
         isDisabled,
@@ -123,7 +132,7 @@ export const useArticle = () => {
 		setAttributes,
 		setPeriod,
 		setAddress,
-		setImg_url,
+		setImg_urls,
 		
         setId,
         setErrors,

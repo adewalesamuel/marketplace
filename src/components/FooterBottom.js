@@ -4,7 +4,7 @@ export function FooterBottom(props) {
         <div className="container-fluid">
             <p className="footer-copyright">Copyright © 2022 Elite Marketpalce. Tous droits réservés.</p>
             <div className="social-icons social-icons-color">
-                <span className="social-label">Social Media</span>
+                <span className="social-label">Media sociaux</span>
                 <a href="#" className="social-icon social-facebook" title="Facebook" target="_blank"><i className="icon-facebook-f"></i></a>
                 <a href="#" className="social-icon social-twitter" title="Twitter" target="_blank"><i className="icon-twitter"></i></a>
                 <a href="#" className="social-icon social-instagram" title="Instagram" target="_blank"><i className="icon-instagram"></i></a>

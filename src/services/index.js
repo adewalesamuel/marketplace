@@ -12,6 +12,7 @@ import { QuoteService } from './QuoteService';
 import { BoostPackService } from './BoostPackService';
 import { BoostService } from './BoostService';
 import { ReviewsService } from './ReviewsService';
+import { AuthService } from './AuthService';
 
 export const Services = {
     ArtisanService,
@@ -28,5 +29,5 @@ export const Services = {
 	BoostPackService,
 	BoostService,
 	ReviewsService,
-	
+	AuthService
 }

@@ -1,17 +1,17 @@
 import { Api } from './Api';
 
 const  ENPOINTS = {
-    Login: 'admin-login',
-    Logout: 'admin-logout'
+    Login: 'login',
+    Logout: 'logout'
 };
 
 
-const login = (payload, signal) => {
-    return Api.post(ENPOINTS.Login, payload, signal)
+const login = (userType='client', payload, signal) => {
+    return Api.post(`${userType}/${ENPOINTS.Login}`, payload, signal)
 }
 
-const logout = (payload, signal) => {
-    return Api.post(ENPOINTS.Logout, payload, signal)
+const logout = (userType='client', payload, signal) => {
+    return Api.post(`${userType}/${ENPOINTS.Logout}`, payload, signal)
 }
 
 

@@ -13,7 +13,7 @@ const getById = (id, signal) => {
 }
 
 const create = (payload, signal) => {
-    return Api.post(ENPOINTS.Order, payload, signal)
+    return Api.post(`client/${ENPOINTS.Order}`, payload, signal)
 }
 
 const update = (id, payload, signal) => {

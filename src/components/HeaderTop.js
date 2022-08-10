@@ -25,7 +25,7 @@ export function HeaderTop(props) {
                                 </li>
                                 <li>   
                                     <div className="header-dropdown">
-                                        <a href="#">Engligh</a>
+                                        <a href="#">English</a>
                                         <div className="header-menu">
                                             <ul>
                                                 <li><a href="#">English</a></li>
@@ -36,7 +36,9 @@ export function HeaderTop(props) {
                                     </div>
                                 </li>
                                 <li className="login">
-                                    <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
+                                    <a href="#signin-modal" data-toggle="modal" id="auth-btn">
+                                        Connexion / Inscription
+                                    </a>
                                 </li>
                             </ul>
                         </li>

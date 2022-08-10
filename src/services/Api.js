@@ -28,8 +28,6 @@ const get = (endpoint, signal=new AbortController().signal) => {
                     message: getResponseErrors(response),
                 };
 
-                error.message.then(err => alert(err.join('\n')));
-
                 return reject(error);
             }
 
@@ -58,8 +56,6 @@ const post = (endpoint, payload='', signal=new AbortController().signal) => {
                     message: getResponseErrors(response),
                 };
 
-                error.message.then(err => alert(err.join('\n')));
-
                 return reject(error);
             }
 
@@ -86,8 +82,6 @@ const postFormData = (endpoint, payload='', signal=new AbortController().signal)
                     status: response.status,
                     message: getResponseErrors(response),
                 };
-
-                error.message.then(err => alert(err.join('\n')));
 
                 return reject(error);
             }
@@ -117,8 +111,6 @@ const put = (endpoint, payload='', signal=new AbortController().signal) => {
                     message: getResponseErrors(response),
                 };
 
-                error.message.then(err => alert(err.join('\n')));
-
                 return reject(error);
             }
 
@@ -145,8 +137,6 @@ const erase = (endpoint, signal=new AbortController().signal) => {
                     status: response.status,
                     message: getResponseErrors(response),
                 };
-
-                error.message.then(err => alert(err.join('\n')));
 
                 return reject(error);
             }
