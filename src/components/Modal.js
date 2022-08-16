@@ -18,13 +18,13 @@ export function Modal(props) {
                     <div className="modal-footer">
                         <button disabled={props.isDisabled ?? false} type="button" className="btn btn-light-secondary" 
                         data-dismiss="modal" onClick={props.closeModal}>
-                            <i className="bx bx-x d-block d-sm-none"></i>
-                            <span className="d-none d-sm-block">Fermer</span>
+                            <i className="bx bx-x d-block"></i>
+                            <span className="d-sm-block">Fermer</span>
                         </button>
                         <button disabled={props.isDisabled ?? false} type="button" className="btn btn-primary ml-1" 
                         data-dismiss="modal" onClick={props.confirmModal ?? null}>
-                            <i className="bx bx-check d-block d-sm-none"></i>
-                            <span className="d-none d-sm-block">Valider</span>
+                            <i className="bx bx-check d-block"></i>
+                            <span className="d-sm-block">Valider</span>
                         </button>
                     </div>
                 </div>

@@ -58,6 +58,8 @@ import { AuthModal } from './AuthModal';
 
 import { ErrorMessage } from './ErrorMessages';
 
+import { CategorySideBar } from './CategorySidebar';
+
 export const Components = {
     ArtisanForm,
 	SouscriptionPackForm,
@@ -116,4 +118,5 @@ export const Components = {
 	Modal,
 	AuthModal,
 	ErrorMessage,
+	CategorySideBar
 }

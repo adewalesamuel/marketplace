@@ -8,7 +8,7 @@ import { Utils } from "../utils";
 import { Auth } from "../utils/Auth";
 
 export function ArticleView(props) {
-    const abortController = useMemo(() => new AbortController(), [])
+    const abortController = useMemo(() => new AbortController(), []);
 
     const {slug} = useParams();
     const useArticle = Hooks.useArticle();
@@ -20,6 +20,11 @@ export function ArticleView(props) {
     const [isOrderModalHidden, setIsOrderModalHidden] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
 
+    const handleCloseClick = e => {
+        useOrder.setAdditionnal_informations('');
+        setErrorMessage('');
+        setIsOrderModalHidden(true);
+    }
     const handleOrderClick = e => {
         e.preventDefault();
 
@@ -27,7 +32,7 @@ export function ArticleView(props) {
             return window.document.querySelector('#auth-btn').click();
 
         const quantity = Number.isInteger(parseInt(useOrder.quantity)) ? 
-        Math.abs(parseInt(useOrder.quantity)) : 1
+        Math.abs(parseInt(useOrder.quantity)) : 1;
 
         useOrder.setPrice(quantity * useArticle.price);
         setIsOrderModalHidden(false);
@@ -49,9 +54,10 @@ export function ArticleView(props) {
         Services.OrderService.create(JSON.stringify(payload), abortController.signal)
         .then(() => {
             alert("Votre commande a bien été  envoyée !");
+
             setErrorMessage('');
-            useOrder.setIsDisabled(false);
             setIsOrderModalHidden(true);
+            useOrder.setIsDisabled(false);
             useOrder.setAdditionnal_informations("");
         })
         .catch(err => {
@@ -71,8 +77,7 @@ export function ArticleView(props) {
             .catch(err => console.log(err));
             
             setRelatedArticles(articles.data);
-
-        })()
+        })();
     }, [hasLoadedBestArticles, slug])
 
     useEffect(() => {
@@ -134,17 +139,17 @@ export function ArticleView(props) {
             </div>
         </div>
         <Components.Modal isHidden={isOrderModalHidden} modalTitle="Formulaire de commande"
-        closeModal={() => setIsOrderModalHidden(true)}confirmModal={handleOrderSubmit} 
+        closeModal={handleCloseClick} confirmModal={handleOrderSubmit} 
         isDisabled={useOrder.isDisabled}>
             <>
             <Components.ErrorMessage message={errorMessage}/>
             <label>Résumé de la commande</label>
             <div className="row justify-content-center mb-2">
-                <div className="col-2">
+                <div className="col-3">
                     <img src={useArticle.img_urls ? `${Api.URL}/${JSON.parse(useArticle.img_urls)[0]}` : ""} 
                     className="rounded" alt={useArticle.name} width={"70px"} height={"70px"}/>
                 </div>
-                <div className="col-10">
+                <div className="col-9">
                     <div className="row">
                         <div className="col-10">
                             <div className="product-title">

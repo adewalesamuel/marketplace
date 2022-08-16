@@ -22,6 +22,7 @@ export function MainRoutes(props) {
     return (
         <Layouts.MainLayout categories={categories}>
             <Routes>
+                <Route exact path="/categories/:slug" element={<Views.CategoryView categories={categories} />}/>
                 <Route exact path="/articles/:slug" element={<Views.ArticleView />}/>
                 <Route exact path="/" element={<Views.HomeView categories={categories}/>}/>
             </Routes>

@@ -3,8 +3,8 @@ export function Breadcrumb(props){
         <nav aria-label="breadcrumb" className="breadcrumb-nav border-0 mb-0">
             <div className="container d-flex align-items-center">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li className="breadcrumb-item"><a href="#">Products</a></li>
+                    <li className="breadcrumb-item"><a href="index.html">Acceuil</a></li>
+                    <li className="breadcrumb-item"><a href="#">Articles</a></li>
                     <li className="breadcrumb-item active" aria-current="page">With Sidebar</li>
                 </ol>
 

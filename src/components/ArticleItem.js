@@ -4,16 +4,18 @@ import { Api } from "../services/Api";
 export function ArticleItem(props) {
     const imgUrls = props.article.img_urls ? JSON.parse(props.article.img_urls) : [];
     const firstArticleImg = imgUrls[0] ? `${Api.URL}/${imgUrls[0]}` : null;
+    const article = props.article ?? {};
+    const category = props.category ?? article.category;
 
     return (
-        <div className="product text-center">
+        <div className={`product text-center ${props.class ?? ""}`}>
             <figure className="product-media">
-                <Link to={`/articles/${props.article.slug}`} style={{
+                <Link to={`/articles/${article.slug}`} style={{
                     width:"230px", 
                     height:"202px", 
                     objectFit:"contain"}}>
                     <img src={firstArticleImg ?? "assets/images/demos/demo-14/products/product-3.jpg"} 
-                    alt={props.article.name} className="product-image" width="230px" height="202px"/>
+                    alt={article.name} className="product-image" width="230px" height="202px"/>
                 </Link>
 
                 <div className="product-action-vertical">
@@ -23,20 +25,20 @@ export function ArticleItem(props) {
                 </div>
 
                 <div className="product-action">
-                    <Link to={`/articles/${props.article.slug}`} className="btn-product btn-cart" 
+                    <Link to={`/articles/${article.slug}`} className="btn-product btn-cart" 
                     title="Voir l'article"><span>Voir l'article</span></Link>
                 </div>
             </figure>
 
             <div className="product-body">
                 <div className="product-cat">
-                    <Link to={`/categories/${props.category.slug}`}>{props.category.name}</Link>
+                    <Link to={`/categories/${category.slug}`}>{category.name}</Link>
                 </div>
                 <h3 className="product-title">
-                    <Link to={`/articles/${props.article.slug}`}>{props.article.name}</Link>
+                    <Link to={`/articles/${article.slug}`}>{article.name}</Link>
                 </h3>
                 <div className="product-price">
-                    {props.article.price} FCFA
+                    {article.price} FCFA
                 </div>
                 <div className="ratings-container">
                     <div className="ratings">
