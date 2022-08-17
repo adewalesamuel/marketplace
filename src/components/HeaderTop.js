@@ -10,27 +10,27 @@ export function HeaderTop(props) {
 
                     <ul className="top-menu">
                         <li>
-                            <a href="#">Links</a>
+                            <a href="/">Links</a>
                             <ul className="menus">
                                 <li>
                                     <div className="header-dropdown">
-                                        <a href="#">USD</a>
+                                        <a href="/">USD</a>
                                         <div className="header-menu">
                                             <ul>
-                                                <li><a href="#">Eur</a></li>
-                                                <li><a href="#">Usd</a></li>
+                                                <li><a href="/">Eur</a></li>
+                                                <li><a href="/">Usd</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </li>
                                 <li>   
                                     <div className="header-dropdown">
-                                        <a href="#">English</a>
+                                        <a href="/">English</a>
                                         <div className="header-menu">
                                             <ul>
-                                                <li><a href="#">English</a></li>
-                                                <li><a href="#">French</a></li>
-                                                <li><a href="#">Spanish</a></li>
+                                                <li><a href="/">English</a></li>
+                                                <li><a href="/">French</a></li>
+                                                <li><a href="/">Spanish</a></li>
                                             </ul>
                                         </div>
                                     </div>

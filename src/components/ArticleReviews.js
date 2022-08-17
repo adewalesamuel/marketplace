@@ -5,7 +5,7 @@ export function ArticleReviews(props) {
             <div className="review">
                 <div className="row no-gutters">
                     <div className="col-auto">
-                        <h4><a href="#">Samanta J.</a></h4>
+                        <h4><a href="/">Samanta J.</a></h4>
                         <div className="ratings-container">
                             <div className="ratings">
                                 <div className="ratings-val"></div>
@@ -21,8 +21,8 @@ export function ArticleReviews(props) {
                         </div>
 
                         <div className="review-action">
-                            <a href="#"><i className="icon-thumbs-up"></i>Helpful (2)</a>
-                            <a href="#"><i className="icon-thumbs-down"></i>Unhelpful (0)</a>
+                            <a href="/"><i className="icon-thumbs-up"></i>Helpful (2)</a>
+                            <a href="/"><i className="icon-thumbs-down"></i>Unhelpful (0)</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export function ArticleReviews(props) {
             <div className="review">
                 <div className="row no-gutters">
                     <div className="col-auto">
-                        <h4><a href="#">John Doe</a></h4>
+                        <h4><a href="/">John Doe</a></h4>
                         <div className="ratings-container">
                             <div className="ratings">
                                 <div className="ratings-val w-100"></div>
@@ -47,8 +47,8 @@ export function ArticleReviews(props) {
                         </div>
 
                         <div className="review-action">
-                            <a href="#"><i className="icon-thumbs-up"></i>Helpful (0)</a>
-                            <a href="#"><i className="icon-thumbs-down"></i>Unhelpful (0)</a>
+                            <a href="/"><i className="icon-thumbs-up"></i>Helpful (0)</a>
+                            <a href="/"><i className="icon-thumbs-down"></i>Unhelpful (0)</a>
                         </div>
                     </div>
                 </div>

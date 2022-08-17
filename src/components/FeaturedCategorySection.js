@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { Components } from ".";
 import { Api } from "../services/Api";
@@ -9,7 +9,6 @@ export function FeaturedCategorySection(props) {
     const categoryBgImgUrl = category.img_url ? `${Api.URL}/${category.img_url}` : null;
     const subCategories = category.categories ?? [];
     const articles = props.articles ?? [];
-    const $ = window.$;
 
     useEffect(() => {
       if (articles.length > 0) {
@@ -52,7 +51,7 @@ export function FeaturedCategorySection(props) {
                             </Link>
 
                             <div className="banner-content">
-                                <h4 className="banner-subtitle text-white"><a href="#">Category</a></h4>
+                                <h4 className="banner-subtitle text-white"><a href="/">Category</a></h4>
                                 <h3 className="banner-title text-white">
                                     <Link to={`/categories/${category.slug}`}>
                                         {category.name}

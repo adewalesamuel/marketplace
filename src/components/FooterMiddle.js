@@ -34,7 +34,7 @@ export function FooterMiddle(props) {
 
                             <ul className="widget-list">
                                 <li><a href="about.html">A propos</a></li>
-                                <li><a href="#">Comment commander</a></li>
+                                <li><a href="/">Comment commander</a></li>
                                 <li><a href="faq.html">FAQ</a></li>
                                 <li><a href="contact.html">Contactez-nous</a></li>
                                 <li><a href="login.html">Connexion</a></li>
@@ -47,12 +47,12 @@ export function FooterMiddle(props) {
                             <h4 className="widget-title">Service client</h4>
 
                             <ul className="widget-list">
-                                <li><a href="#">Moyens de paiment</a></li>
-                                <li><a href="#">Rembousement</a></li>
-                                <li><a href="#">Retous</a></li>
-                                <li><a href="#">Livraison</a></li>
-                                <li><a href="#">Conditions d'utilisation</a></li>
-                                <li><a href="#">Politique de confidentialité</a></li>
+                                <li><a href="/">Moyens de paiment</a></li>
+                                <li><a href="/">Rembousement</a></li>
+                                <li><a href="/">Retous</a></li>
+                                <li><a href="/">Livraison</a></li>
+                                <li><a href="/">Conditions d'utilisation</a></li>
+                                <li><a href="/">Politique de confidentialité</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,10 +62,10 @@ export function FooterMiddle(props) {
                             <h4 className="widget-title">Mon compte</h4>
 
                             <ul className="widget-list">
-                                <li><a href="#">Inscription</a></li>
+                                <li><a href="/">Inscription</a></li>
                                 <li><a href="cart.html">Mon panier</a></li>
-                                <li><a href="#">Suivre ma commande</a></li>
-                                <li><a href="#">Aide</a></li>
+                                <li><a href="/">Suivre ma commande</a></li>
+                                <li><a href="/">Aide</a></li>
                             </ul>
                         </div>
                     </div>

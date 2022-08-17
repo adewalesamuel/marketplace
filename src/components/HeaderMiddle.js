@@ -18,7 +18,7 @@ export function HeaderMiddle(props) {
                         <div className="row">
                             <div className="col-lg-8 col-xxl-4-5col d-none d-lg-block">
                                 <div className="header-search header-search-extended header-search-visible header-search-no-radius">
-                                    <a href="#" className="search-toggle" role="button"><i className="icon-search"></i></a>
+                                    <a href="/" className="search-toggle" role="button"><i className="icon-search"></i></a>
                                     <form action="#" method="get">
                                         <div className="header-search-wrapper search-wrapper-wide">
 
@@ -50,7 +50,7 @@ export function HeaderMiddle(props) {
                                 <div className="header-dropdown-link">
 
                                     <div className="dropdown cart-dropdown">
-                                        <a href="#" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                        <a href="/" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                             <i className="icon-shopping-cart"></i>
                                             <span className="cart-count">2</span>
                                             <span className="cart-txt">Panier</span>
@@ -75,7 +75,7 @@ export function HeaderMiddle(props) {
                                                             <img src="assets/images/products/cart/product-1.jpg" alt="product" />
                                                         </a>
                                                     </figure>
-                                                    <a href="#" className="btn-remove" title="Remove Product"><i className="icon-close"></i></a>
+                                                    <a href="/" className="btn-remove" title="Remove Product"><i className="icon-close"></i></a>
                                                 </div>
 
                                                 <div className="product">
@@ -95,7 +95,7 @@ export function HeaderMiddle(props) {
                                                             <img src="assets/images/products/cart/product-2.jpg" alt="product" />
                                                         </a>
                                                     </figure>
-                                                    <a href="#" className="btn-remove" title="Remove Product"><i className="icon-close"></i></a>
+                                                    <a href="/" className="btn-remove" title="Remove Product"><i className="icon-close"></i></a>
                                                 </div>
                                             </div>
 

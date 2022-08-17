@@ -1,20 +1,24 @@
 import { useEffect, useMemo, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { Components } from "../components";
 import { Services } from '../services';
 
 export function CategoryView(props) {
     const abortController = useMemo(() => new AbortController(), []);
 
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
     const { slug } = useParams();
-
-    const category = props.categories ? 
-    props.categories.find((category) => category.slug === slug) : {};
-
+    
     const [articles, setArticles] = useState([]);
     const [isArticlesLoading, setIsArticlesLoading] = useState(true);
     const [articlesResponseInfo, setArticlesResponseInfo] = useState({});
+
+    const category = props.categories ? 
+    props.categories.find((category) => category.slug === slug) : {};
+    const prevPagelink = `${pathname}${search ? search + "&" : "?"}${articlesResponseInfo
+        .prev_page_url?.slice(articlesResponseInfo.prev_page_url.indexOf("?") + 1) ?? ""}`
+    const nextPageLink = `${pathname}${search ? search + "&" : "?"}${articlesResponseInfo
+        .next_page_url?.slice(articlesResponseInfo.next_page_url.indexOf("?") + 1) ?? ""}`
 
     useEffect(() => {
         setIsArticlesLoading(true);
@@ -121,23 +125,30 @@ export function CategoryView(props) {
                             </div>
                         </div>
 
-
                         <nav aria-label="Page navigation">
                             <ul className="pagination justify-content-center">
                                 <li className="page-item disabled">
-                                    <a className="page-link page-link-prev" href="#" aria-label="Précédent" tabIndex="-1" 
-                                    aria-disabled="true">
-                                        <span aria-hidden="true"><i className="icon-long-arrow-left"></i></span>Précédent
-                                    </a>
+                                    <Link className="page-link page-link-prev" to={prevPagelink} 
+                                    aria-label="Précédent" tabIndex="-1" aria-disabled="true">
+                                        <span aria-hidden="true">
+                                            <i className="icon-long-arrow-left"></i></span>Précédent
+                                    </Link>
                                 </li>
-                                <li className="page-item active" aria-current="page"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item-total">of 6</li>
+                                {articlesResponseInfo.links ? articlesResponseInfo.links.map((link, index) => {
+                                    if (index === 0 || index === articlesResponseInfo.links.length - 1) return null; 
+                                    return (
+                                        <li className={`page-item ${link.active ? "active" : ""}`} aria-current="page" key={index}>
+                                            <Link className="page-link" to={`${pathname}${search ? search + "&" : "?"}${link.url
+                                                .slice(link.url.indexOf("?") + 1)}`}>{link.label}</Link>
+                                        </li>
+                                    )
+
+                                }) : null}
                                 <li className="page-item">
-                                    <a className="page-link page-link-next" href="#" aria-label="Next">
+                                    <Link className="page-link page-link-next" to={nextPageLink} 
+                                    aria-label="Next">
                                         Suivant <span aria-hidden="true"><i className="icon-long-arrow-right"></i></span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>

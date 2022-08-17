@@ -4,7 +4,7 @@ import { init as initPageScripts} from "../assets/js/main";
 import { Services } from "../services";
 
 export function HomeView(props) {
-    const abortController = useMemo(() => new AbortController, []);
+    const abortController = useMemo(() => new AbortController(), []);
 
     const [boosts, setBoosts] = useState([]);
     const [bestArticles, setBestArticles] = useState([]);

@@ -28,7 +28,7 @@ export function LoginForm(props) {
                     </label>
                 </div>
 
-                <a href="#" className="forgot-link">Mot de passe oublié?</a>
+                <a href="/" className="forgot-link">Mot de passe oublié?</a>
             </div>
         </form>
     )
