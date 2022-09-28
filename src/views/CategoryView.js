@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams, useSearchParams } from "react-router-dom";
 import { Components } from "../components";
 import { Services } from '../services';
 
@@ -8,21 +8,24 @@ export function CategoryView(props) {
 
     const { pathname, search } = useLocation();
     const { slug } = useParams();
-    
+    const pageNumber = useSearchParams()[0].get('page');
+
     const [articles, setArticles] = useState([]);
     const [isArticlesLoading, setIsArticlesLoading] = useState(true);
     const [articlesResponseInfo, setArticlesResponseInfo] = useState({});
 
+    // const sanitizedSearch = search.replace(search.match(/?page=\d{0,}&{0,}/gi, "")[0], "");
+
     const category = props.categories ? 
     props.categories.find((category) => category.slug === slug) : {};
-    const prevPagelink = `${pathname}${search ? search + "&" : "?"}${articlesResponseInfo
+    const prevPagelink = `${pathname}?${articlesResponseInfo
         .prev_page_url?.slice(articlesResponseInfo.prev_page_url.indexOf("?") + 1) ?? ""}`
-    const nextPageLink = `${pathname}${search ? search + "&" : "?"}${articlesResponseInfo
+    const nextPageLink = `${pathname}?${articlesResponseInfo
         .next_page_url?.slice(articlesResponseInfo.next_page_url.indexOf("?") + 1) ?? ""}`
 
     useEffect(() => {
         setIsArticlesLoading(true);
-        Services.CategoryService.getArticles(abortController.signal, slug)
+        Services.CategoryService.getArticles(abortController.signal, slug, pageNumber)
         .then(response => {
             setIsArticlesLoading(false);
             setArticles(response.articles.data);
@@ -48,7 +51,7 @@ export function CategoryView(props) {
             setIsArticlesLoading(false);
             console.log(err);
         })
-    }, [pathname, abortController]);
+    }, [pathname, abortController, pageNumber]);
 
     return (
         <>
@@ -138,7 +141,7 @@ export function CategoryView(props) {
                                     if (index === 0 || index === articlesResponseInfo.links.length - 1) return null; 
                                     return (
                                         <li className={`page-item ${link.active ? "active" : ""}`} aria-current="page" key={index}>
-                                            <Link className="page-link" to={`${pathname}${search ? search + "&" : "?"}${link.url
+                                            <Link className="page-link" to={`${pathname}?${link.url
                                                 .slice(link.url.indexOf("?") + 1)}`}>{link.label}</Link>
                                         </li>
                                     )

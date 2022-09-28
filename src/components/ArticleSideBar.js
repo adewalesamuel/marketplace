@@ -12,7 +12,7 @@ export function ArticleSideBar(props) {
                 </div>
 
                 <Link to={`/categories/${props.useArticle.category.slug}`} className="btn btn-outline-dark-3">
-                    <span>View plus d'artilces</span><i className="icon-long-arrow-right"></i>
+                    <span>Voir plus d'artilces</span><i className="icon-long-arrow-right"></i>
                 </Link>
             </div>
 

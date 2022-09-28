@@ -1,7 +1,20 @@
+import { Components } from ".";
+import { Hooks } from "../hooks";
+
 export function ArticleReviews(props) {
+    const useReview = Hooks.useReviews();
+    
+    const handleReviewSubmit = e => {
+        e.preventDefault();
+
+        console.log("submit handle review submit");
+    }
+
     return (
+        <>
+        <Components.ReviewsForm useReviews={useReview}/>
         <div className="reviews">
-            <h3>Notes (2)</h3>
+            <h3>Avis (2)</h3>
             <div className="review">
                 <div className="row no-gutters">
                     <div className="col-auto">
@@ -27,32 +40,7 @@ export function ArticleReviews(props) {
                     </div>
                 </div>
             </div>
-
-            <div className="review">
-                <div className="row no-gutters">
-                    <div className="col-auto">
-                        <h4><a href="/">John Doe</a></h4>
-                        <div className="ratings-container">
-                            <div className="ratings">
-                                <div className="ratings-val w-100"></div>
-                            </div>
-                        </div>
-                        <span className="review-date">5 days ago</span>
-                    </div>
-                    <div className="col">
-                        <h4>Very good</h4>
-
-                        <div className="review-content">
-                            <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi, quas iure illum repellendus, blanditiis perspiciatis beatae!</p>
-                        </div>
-
-                        <div className="review-action">
-                            <a href="/"><i className="icon-thumbs-up"></i>Helpful (0)</a>
-                            <a href="/"><i className="icon-thumbs-down"></i>Unhelpful (0)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+        </>
     )
 }

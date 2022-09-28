@@ -5,7 +5,7 @@ import { Api } from "../services/Api";
 import { Utils } from "../utils";
 
 export function FeaturedCategorySection(props) { 
-    const category = props.category ?? {}   
+    const category = props.category ?? {};   
     const categoryBgImgUrl = category.img_url ? `${Api.URL}/${category.img_url}` : null;
     const subCategories = category.categories ?? [];
     const articles = props.articles ?? [];
